@@ -34,9 +34,11 @@ export NUM_JOBS=24
 
 # install the required tools for cva6
 if ! [ -n "$CVA6_REPO" ]; then
-  CVA6_REPO="https://github.com/openhwgroup/cva6.git"
+  CVA6_REPO="git@github.com:WaveletJSC/cva6.git"
+#  CVA6_REPO="https://github.com/openhwgroup/cva6.git"
   CVA6_BRANCH="master"
-  CVA6_HASH="00236be3d8552f93a0bebda8f9820ec54b64a000"
+  CVA6_HASH="head"
+#  CVA6_HASH="00236be3d8552f93a0bebda8f9820ec54b64a000"
   CVA6_PATCH=
 fi
 echo $CVA6_REPO
@@ -50,6 +52,7 @@ if ! [ -d core-v-cores/cva6 ]; then
   if [ -f ../$CVA6_PATCH ]; then
     git apply ../$CVA6_PATCH
   fi
+  git submodule update --init --recursive
   cd -
 fi
 

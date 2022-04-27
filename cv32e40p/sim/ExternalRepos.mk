@@ -13,9 +13,9 @@
 
 export SHELL = /bin/bash
 
-CV_CORE_REPO   ?= https://github.com/openhwgroup/cv32e40p
+CV_CORE_REPO   ?= git@github.com:WaveletJSC/cv32e40p
 CV_CORE_BRANCH ?= master
-CV_CORE_HASH   ?= fcd5968
+CV_CORE_HASH   ?= head
 CV_CORE_TAG    ?= none
 # The CV_CORE_HASH above points to version of the RTL that is newer, but
 # ilogically equivalent RTL with respect to v1.0.0 RTL freeze version.
