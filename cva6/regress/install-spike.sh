@@ -14,7 +14,7 @@ if [ -z ${NUM_JOBS} ]; then
     NUM_JOBS=1
 fi
 
-#if [ ! -f "$SPIKE_ROOT/bin/spike"  ]; then
+if [ ! -f "$SPIKE_ROOT/bin/spike"  ]; then
     echo "Installing Spike"
     PATCH_DIR=`pwd`/cva6/regress
     mkdir -p $SPIKE_ROOT
@@ -28,9 +28,9 @@ fi
     ../configure --enable-commitlog --prefix="$SPIKE_ROOT"
     make -j${NUM_JOBS}
     make install
-#else
-#    echo "Using Spike from cached directory."
-#fi
+else
+    echo "Using Spike from cached directory."
+fi
 
 
 
